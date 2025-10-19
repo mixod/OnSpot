@@ -16,9 +16,12 @@ const Navbar = () => {
 
   return (
     <>
+      <div>
+        <Header />
+      </div>
 
-      <nav className="sticky top-0 z-50 mt-6 mx-6">
-        <div className="max-w-6xl mx-auto bg-gray-100 shadow-2xl rounded-2xl px-8 py-4 flex justify-between items-center">
+      <nav className="sticky top-0 z-50 mx-6">
+        <div className="max-w-7xl mx-auto bg-gray-100 shadow-2xl rounded-2xl px-8 py-4 flex justify-between items-center">
           {/* Left - Logo */}
           <div className="flex items-center space-x-2">
             <img
