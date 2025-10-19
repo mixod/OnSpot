@@ -75,9 +75,9 @@ const Home = () => {
 
 
   return (
-    <div>
+      <div>
       {/* part 1 */}
-      <div className="w-full mt-20" >
+      <div className="w-full mt-20" data-aos="fade-up">
         <Carousel arrows infinite autoplay>
           {data.map((banner) => (
             <div key={banner.id} className="relative">
@@ -89,6 +89,7 @@ const Home = () => {
               <div className="absolute inset-0 bg-black/60 flex items-center justify-center">
                 <h3
                   className="text-white text-3xl md:text-5xl font-bold text-center px-4"
+                  data-aos="zoom-in"
                 >
                   {banner.title}
                 </h3>
@@ -103,13 +104,14 @@ const Home = () => {
         <div className="max-w-7xl mx-auto">
           <h2
             className="text-3xl border-l-4 border-amber-500 pl-2 text-white"
+            data-aos="fade-right"
           >
             Description
           </h2>
 
           <div className="px-4 py-5 flex flex-col md:flex-row gap-8">
             {/* LEFT SIDE IMAGE */}
-            <div className="md:w-1/2" >
+            <div className="md:w-1/2" data-aos="fade-right">
               <img
                 src="/images/2.png"
                 alt="Onspot Wallet App"
@@ -120,6 +122,7 @@ const Home = () => {
             {/* RIGHT SIDE CONTENT */}
             <div
               className="md:w-1/2 flex flex-col justify-center shadow-lg px-5 py-2 rounded-xl bg-white"
+              data-aos="fade-left"
             >
               <h2 className="text-4xl font-bold mb-4 text-gray-800">
                 Onspot Wallet
@@ -136,7 +139,7 @@ const Home = () => {
                 <li>Secure and easy-to-use</li>
                 <li>Track all your spending</li>
               </ul>
-              <Button type="primary" >
+              <Button type="primary" data-aos="zoom-in">
                 Learn More
               </Button>
             </div>
@@ -145,7 +148,7 @@ const Home = () => {
       </div>
 
       {/* part 3 */}
-      <div className="relative w-full py-20" >
+      <div className="relative w-full py-20" data-aos="fade-up">
         <img
           src="https://coolbackgrounds.imgix.net/2SvDjcgyav5C1DOb79JKXl/d3b06db5bb6bdb4ab237f666b5b4980e/compute-ea4c57a4.png?w=3840&q=60&auto=format,compress"
           alt="Background"
@@ -156,6 +159,7 @@ const Home = () => {
         <div className="relative max-w-7xl mx-auto px-4">
           <h2
             className="text-white border-l-4 border-amber-500 pl-2 text-3xl mb-10"
+            data-aos="fade-down"
           >
             Trusted Users
           </h2>
@@ -181,12 +185,14 @@ const Home = () => {
       {/* part 4 */}
       <div
         className="relative w-full py-20 bg-gradient-to-r from-[#7B68EE]/20 via-[#6A5ACD]/20 to-[#5C2EF2]/20"
+        data-aos="fade-up"
       >
         <div className="absolute inset-0 bg-black/30 backdrop-blur-sm"></div>
 
         <div className="relative max-w-7xl mx-auto px-4">
           <h2
             className="text-4xl md:text-5xl font-bold text-center text-white mb-12"
+            data-aos="fade-down"
           >
             What Our Users Say
           </h2>
@@ -196,6 +202,7 @@ const Home = () => {
               <div key={testimonial.id} className="flex justify-center px-4">
                 <div
                   className="bg-white/20 backdrop-blur-lg p-8 text-center shadow-lg rounded-lg transform transition duration-300"
+                  data-aos="flip-up"
                 >
                   <img
                     src={testimonial.image}
