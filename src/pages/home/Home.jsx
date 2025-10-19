@@ -1,11 +1,13 @@
 import React from "react";
-import { Button, Carousel, Rate, Card, Row, Col } from "antd";
+import { Button, Carousel, Rate, Card, Row, Col, Input } from "antd";
 import {
   UserOutlined,
   GlobalOutlined,
   DollarCircleOutlined,
 } from "@ant-design/icons";
+import { ArrowRightOutlined } from "@ant-design/icons";
 
+import { SendOutlined, MailOutlined } from "@ant-design/icons";
 const data = [
   {
     id: 1,
@@ -72,23 +74,24 @@ const testimonialsData = [
 ];
 
 const Home = () => {
-
-
   return (
-      <div>
+    <div>
       {/* part 1 */}
-      <div className="w-full mt-20" data-aos="fade-up">
+      <div className="w-full" data-aos="fade-up">
         <Carousel arrows infinite autoplay>
           {data.map((banner) => (
             <div key={banner.id} className="relative">
+              {/* Responsive image */}
               <img
                 src={banner.image}
                 alt={banner.title}
-                className="w-full h-screen object-cover"
+                className="w-full h-[60vh] md:h-[80vh] lg:h-screen object-cover"
               />
-              <div className="absolute inset-0 bg-black/60 flex items-center justify-center">
+
+              {/* Overlay with centered text */}
+              <div className="absolute inset-0 bg-black/60 flex items-center justify-center px-4">
                 <h3
-                  className="text-white text-3xl md:text-5xl font-bold text-center px-4"
+                  className="text-white text-2xl sm:text-3xl md:text-5xl font-extrabold text-center leading-tight"
                   data-aos="zoom-in"
                 >
                   {banner.title}
@@ -100,47 +103,65 @@ const Home = () => {
       </div>
 
       {/* part 2 */}
-      <div className="bg-[#1B03A3] p-10">
-        <div className="max-w-7xl mx-auto">
+
+      <div className="relative bg-gradient-to-br from-[#0B0B45] via-[#1B03A3] to-[#3E1AE0] py-16 md:py-20 overflow-hidden">
+        {/* Decorative gradient glow */}
+        <div className="absolute top-20 left-10 w-60 sm:w-72 h-60 sm:h-72 bg-amber-400/20 blur-3xl rounded-full"></div>
+        <div className="absolute bottom-10 right-10 w-60 sm:w-72 h-60 sm:h-72 bg-blue-500/20 blur-3xl rounded-full"></div>
+
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 relative z-10">
+          {/* Header */}
           <h2
-            className="text-3xl border-l-4 border-amber-500 pl-2 text-white"
+            className="text-2xl sm:text-3xl md:text-4xl font-bold text-white border-l-4 border-amber-500 pl-3 mb-8 sm:mb-12"
             data-aos="fade-right"
           >
             Description
           </h2>
 
-          <div className="px-4 py-5 flex flex-col md:flex-row gap-8">
-            {/* LEFT SIDE IMAGE */}
-            <div className="md:w-1/2" data-aos="fade-right">
+          {/* Main Content */}
+          <div className="flex flex-col md:flex-row gap-6 sm:gap-10 items-stretch bg-white/10 backdrop-blur-md rounded-2xl sm:rounded-3xl shadow-2xl border border-white/10 overflow-hidden">
+            {/* LEFT IMAGE */}
+            <div
+              className="md:w-1/2 w-full h-56 sm:h-72 md:h-auto"
+              data-aos="fade-right"
+            >
               <img
-                src="/images/2.png"
+                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSGxAvG3u2T2ESM8J_TxqYCIdzLC0V4_wcsfw&s"
                 alt="Onspot Wallet App"
-                className="w-full h-full object-cover rounded-xl shadow-lg"
+                className="w-full h-full object-cover"
               />
             </div>
 
-            {/* RIGHT SIDE CONTENT */}
+            {/* RIGHT CONTENT */}
             <div
-              className="md:w-1/2 flex flex-col justify-center shadow-lg px-5 py-2 rounded-xl bg-white"
+              className="md:w-1/2 text-white flex flex-col justify-center p-6 sm:p-8 md:p-10"
               data-aos="fade-left"
             >
-              <h2 className="text-4xl font-bold mb-4 text-gray-800">
+              <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold mb-3 sm:mb-4">
                 Onspot Wallet
               </h2>
-              <p className="text-gray-600 mb-6">
+
+              <p className="text-gray-200 text-base sm:text-lg mb-5 sm:mb-6 leading-relaxed">
                 A revolutionary digital wallet that works <b>offline</b>! Make
                 payments, manage transactions, and stay in control even without
                 an internet connection. Fast, secure, and reliable — anytime,
                 anywhere.
               </p>
-              <ul className="text-gray-600 mb-6 list-disc list-inside space-y-2">
+
+              <ul className="text-gray-200 mb-6 sm:mb-8 list-disc list-inside space-y-1 sm:space-y-2 text-sm sm:text-base">
                 <li>Works without internet</li>
                 <li>Instant offline transactions</li>
                 <li>Secure and easy-to-use</li>
                 <li>Track all your spending</li>
               </ul>
-              <Button type="primary" data-aos="zoom-in">
-                Learn More
+
+              <Button
+                type="primary"
+                size="large"
+                className="bg-amber-500 hover:bg-amber-600 border-none font-semibold text-white flex items-center justify-center sm:justify-start gap-2 shadow-lg w-full sm:w-auto"
+                data-aos="zoom-in"
+              >
+                Learn More <ArrowRightOutlined />
               </Button>
             </div>
           </div>
@@ -224,6 +245,49 @@ const Home = () => {
               </div>
             ))}
           </Carousel>
+        </div>
+      </div>
+
+      {/* part 5 */}
+      <div className="relative bg-gradient-to-br from-[#1B03A3] via-[#3E1AE0] to-[#0B0B45] py-16 md:py-20 overflow-hidden">
+        {/* Decorative background glow */}
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_bottom_left,_rgba(255,193,7,0.15),_transparent_60%)]"></div>
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,_rgba(59,130,246,0.15),_transparent_60%)]"></div>
+
+        <div
+          className="max-w-3xl mx-auto px-4 sm:px-6 text-center relative z-10"
+          data-aos="fade-up"
+        >
+          {/* Title */}
+          <h2 className="text-3xl sm:text-4xl font-extrabold text-white mb-4 leading-tight">
+            Subscribe for Updates
+          </h2>
+
+          <p className="text-gray-200 mb-8 sm:mb-10 text-base sm:text-lg leading-relaxed">
+            Stay up to date with the latest news, updates, and features from{" "}
+            <b>Onspot Wallet</b>. Join our community today!
+          </p>
+
+          {/* Subscribe Form */}
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4 bg-white/10 backdrop-blur-md rounded-2xl sm:rounded-full p-4 sm:p-3 border border-white/20 shadow-xl">
+            <Input
+              size="large"
+              prefix={<MailOutlined className="text-gray-400" />}
+              placeholder="Enter your email"
+              className="bg-transparent text-white placeholder-gray-300 border-none focus:shadow-none w-full"
+            />
+            <Button
+              type="primary"
+              size="large"
+              className="bg-amber-500 hover:bg-amber-600 border-none font-semibold text-white px-6 sm:px-8 flex items-center gap-2 w-full sm:w-auto justify-center"
+            >
+              Subscribe <SendOutlined />
+            </Button>
+          </div>
+
+          <p className="text-gray-400 text-xs sm:text-sm mt-5">
+            We respect your privacy. Unsubscribe anytime.
+          </p>
         </div>
       </div>
     </div>
